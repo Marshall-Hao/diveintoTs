@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-01-06 02:50:20
- * @LastEditTime: 2022-01-06 04:19:12
+ * @LastEditTime: 2022-01-06 16:19:19
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /diveIntoTs/08typeTs/wideTs.ts
@@ -95,8 +95,8 @@ function bar<T>(arg: T) {
 
 bar<object>({b:1})
 
-function add<T extends number | string> (a: T, b: T) {
-    console.log(<any>a + <any>b)
+function add<T> (a: T, b: T) {
+    return <any>a + <any>b
 }
 
-add("a",2)
+const c = add<string | number>("a",2)
